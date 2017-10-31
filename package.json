@@ -1,6 +1,6 @@
 {
   "name": "cidr-clean",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Compare list of CIDR, remove duplicates and choose the heaviest network in case of overlap",
   "main": "index.js",
   "scripts": {

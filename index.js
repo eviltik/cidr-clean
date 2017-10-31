@@ -8,10 +8,14 @@ function isCidrV4(c) {
 
 function cleaner(cidr1, cidr2) {
 
-    let n1, n2, removeMe = [];
+    let n1, n2, removeMe = [], tmp;
 
     // merge both
-    let tmp = [...cidr1, ...cidr2];
+    if (cidr2) {
+        tmp = [...cidr1, ...cidr2];
+    } else {
+        tmp = cidr1;
+    }
 
     // remove extra spaces
     tmp = tmp.map(c => {

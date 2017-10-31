@@ -6,7 +6,7 @@
 What for ?
 ----------
 
-Merge 2 list of CIDRs:
+Clean an array of CIDR
 * remove duplicates
 * remove comments
 * remove bad CIDRs
@@ -26,19 +26,17 @@ Usage
 ```
 const cidrClean = require('cidr-clean');
 
-let c1 = [
+let list = [
     '#mycomment',
-    '10.1.2.0/23'
-];
-
-let c2 = [
+    '10.1.2.0/23',
     '110.1.3.248/30',
     '1.2.3.4/10'
 ];
 
-console.log(cidrClean(c1, c2));
+console.log(cidrClean(list));
 
 # output: ['10.1.2.0/23', '110.1.3.248/30', '1.2.3.4/10'];
 
+# note, you can cidrClean(list1, list2) for merging 2 cidr lists
 ```
 
