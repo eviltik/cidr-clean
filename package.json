@@ -1,0 +1,30 @@
+{
+  "name": "cidr-clean",
+  "version": "1.0.0",
+  "description": "Compare list of CIDR, remove duplicates and choose the heaviest network in case of overlap",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/tap/bin/run.js test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eviltik/cidr-clean.git"
+  },
+  "keywords": [
+    "cidr"
+  ],
+  "author": "eviltik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eviltik/cidr-clean/issues"
+  },
+  "homepage": "https://github.com/eviltik/cidr-clean#readme",
+  "devDependencies": {
+    "tap": "10.7.2"
+  },
+  "dependencies": {
+    "ip-to-int": "0.3.1",
+    "netmask": "1.0.6",
+    "sanic.js": "0.0.4"
+  }
+}
