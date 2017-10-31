@@ -40,3 +40,6 @@ console.log(cidrClean(list));
 # note, you can cidrClean(list1, list2) for merging 2 cidr lists
 ```
 
+Todo
+----
+* optional callback with all events (remove, overlap)
