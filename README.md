@@ -2,6 +2,7 @@
 -----------
 [![Build Status](https://travis-ci.org/eviltik/cidr-clean.svg?branch=master)](https://travis-ci.org/franck34/sockmq)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![Dependencies](https://david-dm.org/eviltik/cidr-clean.svg)](https://david-dm.org/eviltik/cidr-clean)
 
 What for ?
 ----------
