@@ -8,7 +8,9 @@ function isCidrV4(c) {
 
 function cleaner(cidr1, cidr2) {
 
-    let n1, n2, removeMe = [], tmp;
+    const removeMe = [];
+
+    let n1, n2, tmp;
 
     // merge both
     if (cidr2) {
