@@ -33,13 +33,13 @@ function cleaner(cidr1, cidr2) {
     tmp = [ ...new Set(tmp) ];
 
     // detect overlaps
-    tmp = tmp.filter((c1,idx1) => {
+    tmp = tmp.filter((c1, idx1) => {
 
         n1 = new Netmask(c1);
         n1.firstInt = ipInt(n1.first).toInt();
         n1.lastInt = ipInt(n1.last).toInt();
 
-        tmp.filter((c2,idx2) => {
+        tmp.filter((c2, idx2) => {
 
             if (idx1 === idx2) return true;
 
