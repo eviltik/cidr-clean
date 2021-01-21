@@ -62,7 +62,7 @@ function cleaner(cidr1, cidr2) {
     });
 
     while (removeMe.length) {
-        tmp.splice(removeMe[removeMe.length-1],1);
+        tmp.splice(removeMe[removeMe.length-1], 1);
         removeMe.pop();
     }
 
