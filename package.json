@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/eviltik/cidr-clean#readme",
   "devDependencies": {
-    "tap": "14.2.0"
+    "tap": "14.11.0"
   },
   "dependencies": {
     "ip-to-int": "0.3.1",
     "netmask": "1.0.6",
-    "sanic.js": "1.1.0"
+    "sanic.js": "1.1.2"
   }
 }
