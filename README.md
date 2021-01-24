@@ -1,6 +1,7 @@
 # cidr-clean
 -----------
-[![Build Status](https://travis-ci.org/eviltik/cidr-clean.svg?branch=master)](https://travis-ci.org/eviltik/cidr-clean.svg)
+![Node.js CI](https://github.com/eviltik/evilscan/workflows/Node.js%20CI/badge.svg)
+[![npm version](https://badge.fury.io/js/evilscan.svg)](https://badge.fury.io/js/evilscan)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Dependencies](https://david-dm.org/eviltik/cidr-clean.svg)](https://david-dm.org/eviltik/cidr-clean)
 
