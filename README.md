@@ -1,7 +1,7 @@
 # cidr-clean
 -----------
-![Node.js CI](https://github.com/eviltik/evilscan/workflows/Node.js%20CI/badge.svg)
-[![npm version](https://badge.fury.io/js/evilscan.svg)](https://badge.fury.io/js/evilscan)
+![Node.js CI](https://github.com/eviltik/cidr-clean/workflows/Node.js%20CI/badge.svg)
+[![npm version](https://badge.fury.io/js/cidr-clean.svg)](https://badge.fury.io/js/cidr-clean)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![Dependencies](https://david-dm.org/eviltik/cidr-clean.svg)](https://david-dm.org/eviltik/cidr-clean)
 
