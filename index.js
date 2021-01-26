@@ -20,13 +20,16 @@ function cleaner(cidr1, cidr2) {
     }
 
     // remove extra spaces
+    // add /32 for simple IP
     tmp = tmp.map(c => {
-        return c.trim();
+        c = c.trim();
+        if (!c.match(/\//)) c+='/32';
+        return c;
     });
 
     // remove comments or badly formated cidr
     tmp = tmp.filter(c => {
-        if (isCidrV4(c)) return true;
+        return isCidrV4(c);
     });
 
     // remove duplicates
