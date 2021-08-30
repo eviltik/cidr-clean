@@ -4,7 +4,7 @@
   "description": "Compare list of CIDR, remove duplicates and choose the heaviest network in case of overlap",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/tap/bin/run.js test/*"
+    "test": "node node_modules/tap/bin/run.js test/* --no-check-coverage"
   },
   "repository": {
     "type": "git",

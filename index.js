@@ -6,11 +6,15 @@ function isCidrV4(c) {
     return c.match(/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([0-9]|[1-2][0-9]|3[0-2]))$/);
 }
 
+function isIPV4(c) {
+    console.log('test', c);
+    return c.match(/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/);
+}
+
 function cleaner(cidr1, cidr2) {
 
-    const removeMe = [];
-
     let n1, n2, tmp;
+    const removeMe = [];
 
     // merge both
     if (cidr2) {
@@ -20,17 +24,30 @@ function cleaner(cidr1, cidr2) {
     }
 
     // remove extra spaces
-    // add /32 for simple IP
     tmp = tmp.map(c => {
-        c = c.trim();
-        if (!c.match(/\//)) c+='/32';
-        return c;
+        return c.trim();
     });
 
     // remove comments or badly formated cidr
     tmp = tmp.filter(c => {
-        return isCidrV4(c);
+
+        if (isCidrV4(c)) {
+            return true;
+        }
+
+        if (isIPV4(c)) {
+            // missing /32, let's add it later
+            return true;
+        }
     });
+
+    for (let i = 0; i<tmp.length; i++) {
+        if (!isCidrV4(tmp[i])) {
+            if (isIPV4(tmp[i])) {
+                tmp[i]+='/32';
+            }
+        }
+    }
 
     // remove duplicates
     tmp = [ ...new Set(tmp) ];
@@ -51,9 +68,9 @@ function cleaner(cidr1, cidr2) {
             n2.lastInt = ipInt(n2.last).toInt();
 
             if (
-                (n2.firstInt >= n1.firstInt && n2.firstInt <= n1.lastInt)
+                (n2.firstInt > n1.firstInt && n2.firstInt < n1.lastInt)
                 ||
-                (n2.lastInt >= n1.firstInt && n2.lastInt <= n1.lastInt)
+                (n2.lastInt > n1.firstInt && n2.lastInt < n1.lastInt)
             ) {
                 if (n1.size>n2.size) {
                     removeMe.push(idx2);
@@ -65,7 +82,7 @@ function cleaner(cidr1, cidr2) {
     });
 
     while (removeMe.length) {
-        tmp.splice(removeMe[removeMe.length-1], 1);
+        tmp.splice(removeMe[removeMe.length-1],1);
         removeMe.pop();
     }
 
